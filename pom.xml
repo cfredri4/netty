@@ -26,7 +26,7 @@
   <groupId>io.netty</groupId>
   <artifactId>netty-parent</artifactId>
   <packaging>pom</packaging>
-  <version>4.2.13.Final-SNAPSHOT</version>
+  <version>4.2.14.Final-SNAPSHOT</version>
 
   <name>Netty</name>
   <url>https://netty.io/</url>
@@ -1398,6 +1398,13 @@
                   <code>java.class.externalClassExposedInAPI</code>
                   <new>class net.jpountz.lz4.LZ4JNIHCFastResetCompressor</new>
                   <justification>Added in at.yawk.lz4:lz4-java:1.11.0.</justification>
+                </item>
+                <item>
+                  <ignore>true</ignore>
+                  <code>java.method.finalMethodAddedToNonFinalClass</code>
+                  <classQualifiedName>io.netty.handler.codec.http.HttpObjectDecoder</classQualifiedName>
+                  <new>method void io.netty.handler.codec.http.HttpObjectDecoder::clearContentLength()</new>
+                  <justification>Final methods added as utility</justification>
                 </item>
               </differences>
             </revapi.differences>
